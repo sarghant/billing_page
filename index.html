@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Billing Page</title>
+  </head>
+  <body>
+    <div class="backdrop"></div>
+    <div class="card">
+      <div class="side-nav">
+        <div>
+          <!-- Profile picture and user information -->
+          <div class="profile">
+            <div class="user-img">
+              <img
+                src="https://randomuser.me/api/portraits/women/45.jpg"
+                alt="User Profile"
+              />
+            </div>
+            <div class="user-info">
+              <h5>Jane Doe</h5>
+              <small>@janedoe</small>
+            </div>
+          </div>
+          <!-- Navigation list -->
+          <ul class="side-menu">
+            <li class="side-menu-item">
+              <span class="list-border"></span>
+              <a href="#" class="side-menu-link">
+                <div class="icon-wrapper">
+                  <i class="fa-solid fa-house"></i>
+                </div>
+                <span>General</span>
+              </a>
+              <div class="overlay"></div>
+            </li>
+            <li class="side-menu-item">
+              <span class="list-border"></span>
+              <a href="#" class="side-menu-link">
+                <div class="icon-wrapper">
+                  <i class="fa-solid fa-lock"></i>
+                </div>
+                <span>Password</span>
+              </a>
+              <div class="overlay"></div>
+            </li>
+            <li class="side-menu-item">
+              <span class="list-border"></span>
+              <a href="#" class="side-menu-link">
+                <div class="icon-wrapper">
+                  <i class="fa-solid fa-envelopes-bulk"></i>
+                </div>
+                <span>Invitations</span>
+              </a>
+              <div class="overlay"></div>
+            </li>
+            <li class="side-menu-item">
+              <span class="list-border"></span>
+              <a href="#" class="side-menu-link">
+                <div class="icon-wrapper">
+                  <i class="fa-solid fa-money-bills"></i>
+                </div>
+                <span>Billing</span>
+              </a>
+              <div class="overlay"></div>
+            </li>
+            <li class="side-menu-item">
+              <span class="list-border"></span>
+              <a href="#" class="side-menu-link">
+                <div class="icon-wrapper">
+                  <i class="fa-solid fa-mobile-button"></i>
+                </div>
+                <span>Apps</span>
+              </a>
+              <div class="overlay"></div>
+            </li>
+          </ul>
+        </div>
+        <!-- Registration / Login -->
+        <button class="btn btn-login">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </div>
+          <span>Log out</span>
+        </button>
+      </div>
+      <!-- Card body -->
+      <div class="card-body">
+        <div>
+          <div class="card-header">
+            <h2 class="card-title">Billing</h2>
+            <div class="subtitle-wrapper">
+              <h5>Order History</h5>
+              <small>Manage billing information and view receipts</small>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table id="orders">
+              <thead>
+                <tr>
+                  <th><small>Date</small></th>
+                  <th><small>Type</small></th>
+                  <th><small>Receipt</small></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <p>Oct. 21, 2021</p>
+                  </td>
+                  <td>
+                    <p>Pro Annual</p>
+                  </td>
+                  <td><button class="btn btn-download">Download</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Aug. 21, 2021</p>
+                  </td>
+                  <td>
+                    <p>Pro Portfolio</p>
+                  </td>
+                  <td><button class="btn btn-download">Download</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>July 21, 2021</p>
+                  </td>
+                  <td>
+                    <p>Sponsored Post</p>
+                  </td>
+                  <td><button class="btn btn-download">Download</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>June 21, 2021</p>
+                  </td>
+                  <td>
+                    <p>Sponsored Post</p>
+                  </td>
+                  <td><button class="btn btn-download">Download</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="btn btn-load">Load more</button>
+          </div>
+          <div class="card-footer">
+            <div class="subtitle-wrapper">
+              <h5>Payment Method</h5>
+              <small>Manage billing information and view receipts</small>
+            </div>
+            <div class="flex-wrapper">
+              <div>
+                <i class="fa-brands fa-cc-visa"></i>
+                <p>Visa ending in 2255</p>
+              </div>
+              <button class="btn btn-remove">Remove</button>
+            </div>
+          </div>
+        </div>
+        <!-- Right sidebar -->
+        <div class="right-sidebar">
+          <div class="sidebar-card">
+            <p>Your plan</p>
+            <h3>Pro Annual</h3>
+            <small>Renews on Nov. 2021</small>
+            <button class="btn btn-cancel">Cancel subscription</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const sideListItemLinks = [
+        ...document.querySelectorAll(".side-menu-link"),
+      ];
+      sideListItemLinks.forEach((link, index, arr) => {
+        link.addEventListener("click", (e) => {
+          arr.forEach((item) => item.parentElement.classList.remove("active"));
+          link.parentElement.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
